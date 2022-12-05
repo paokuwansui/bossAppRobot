@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 from json import load, dump
-from thread import ctrl_class
+# from thread import ctrl_class
 from time import sleep
 from log_code import log
 class WinGUI(Tk):
@@ -50,10 +50,10 @@ class Frame_config(Frame):
         self.__frame()
         self.name = name
         self.config = config
-        self.tk_label_lay0xugu = self.__tk_label_lay0xugu()
-        self.tk_input_stant_age = self.__tk_input_stant_age()
-        self.tk_label_lay10gxf = self.__tk_label_lay10gxf()
-        self.tk_input_end_gae = self.__tk_input_end_gae()
+        # self.tk_label_lay0xugu = self.__tk_label_lay0xugu()
+        # self.tk_input_stant_age = self.__tk_input_stant_age()
+        # self.tk_input_end_gae = self.__tk_input_end_gae()
+        # self.tk_label_lay10gxf = self.__tk_label_lay10gxf()
         self.tk_label_lay11xnf = self.__tk_label_lay11xnf()
         self.tk_label_lay19pd0 = self.__tk_label_lay19pd0()
         self.tk_label_lay1ftex = self.__tk_label_lay1ftex()
@@ -83,31 +83,31 @@ class Frame_config(Frame):
     def __frame(self):
         self.place(x=5, y=150, width=590, height=325)
 
-    def __tk_label_lay0xugu(self):
-        label = Label(self,text="年龄：")
-        label.place(x=0, y=60, width=38, height=18)
-        return label
+    # def __tk_label_lay0xugu(self):
+    #     label = Label(self,text="年龄：")
+    #     label.place(x=0, y=60, width=38, height=18)
+    #     return label
 
-    def __tk_input_stant_age(self):
-        ipt = Entry(self)
-        ipt.insert(0, self.config["年龄"][0])
-        ipt.place(x=58, y=60, width=28, height=19)
-        return ipt
+    # def __tk_input_stant_age(self):
+    #     ipt = Entry(self)
+    #     ipt.insert(0, self.config["年龄"][0])
+    #     ipt.place(x=58, y=60, width=28, height=19)
+    #     return ipt
 
-    def __tk_label_lay10gxf(self):
-        label = Label(self,text="-")
-        label.place(x=90, y=60, width=15, height=19)
-        return label
+    # def __tk_input_end_gae(self):
+    #     ipt = Entry(self)
+    #     ipt.insert(0, self.config["年龄"][1])
+    #     ipt.place(x=108, y=60, width=28, height=19)
+    #     return ipt
 
-    def __tk_input_end_gae(self):
-        ipt = Entry(self)
-        ipt.insert(0, self.config["年龄"][1])
-        ipt.place(x=108, y=60, width=28, height=19)
-        return ipt
+    # def __tk_label_lay10gxf(self):
+    #     label = Label(self,text="-")
+    #     label.place(x=90, y=60, width=15, height=19)
+    #     return label
 
     def __tk_label_lay11xnf(self):
         label = Label(self,text="性别：")
-        label.place(x=160, y=60, width=58, height=18)
+        label.place(x=0, y=60, width=58, height=18)
         return label
 
     def __tk_label_lay19pd0(self):
@@ -217,7 +217,7 @@ class Frame_config(Frame):
         else:
             self.check_button_man.set(False)
         cb = Checkbutton(self,text="男",var = self.check_button_man)
-        cb.place(x=220, y=60, width=42, height=24)
+        cb.place(x=40, y=60, width=42, height=24)
         return cb
 
     def __tk_check_button_woman(self):
@@ -227,7 +227,7 @@ class Frame_config(Frame):
         else:
             self.check_button_woman.set(False)
         cb = Checkbutton(self,text="女",var = self.check_button_woman)
-        cb.place(x=266, y=60, width=42, height=24)
+        cb.place(x=80, y=60, width=42, height=24)
         return cb
 
     def __tk_check_button_active_1(self):
@@ -419,12 +419,12 @@ class Win(WinGUI):
     def __init__(self):
         super().__init__()
         self.__event_bind()
-        global ctrl 
-        ctrl = ctrl_class()
-        ctrl.login()
-        sleep(2.5)
-        ctrl.start_greet()
-        ctrl.open_time_greet()
+        # global ctrl 
+        # ctrl = ctrl_class()
+        # ctrl.login()
+        # sleep(2.5)
+        # ctrl.start_greet()
+        # ctrl.open_time_greet()
         
     def save_config(self,evt):
         log.push("系统配置文件正在保存")
@@ -432,8 +432,8 @@ class Win(WinGUI):
         area_list = self.tk_tabs_config_and_log.area_list
         for ob in area_list:
             save_dict[ob.name] = ob.config
-            save_dict[ob.name]["年龄"][0] = eval(ob.tk_input_stant_age.get())
-            save_dict[ob.name]["年龄"][1] = eval(ob.tk_input_end_gae.get())
+            # save_dict[ob.name]["年龄"][0] = eval(ob.tk_input_stant_age.get())
+            # save_dict[ob.name]["年龄"][1] = eval(ob.tk_input_end_gae.get())
 
             if ob.check_button_man.get() == True:
                 save_dict[ob.name]["性别"].append("男")
