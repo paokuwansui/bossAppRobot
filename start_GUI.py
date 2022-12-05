@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 from json import load, dump
-# from thread import ctrl_class
+from thread import ctrl_class
 from time import sleep
 from log_code import log
 class WinGUI(Tk):
@@ -419,12 +419,12 @@ class Win(WinGUI):
     def __init__(self):
         super().__init__()
         self.__event_bind()
-        # global ctrl 
-        # ctrl = ctrl_class()
-        # ctrl.login()
-        # sleep(2.5)
-        # ctrl.start_greet()
-        # ctrl.open_time_greet()
+        global ctrl 
+        ctrl = ctrl_class()
+        ctrl.login()
+        sleep(2.5)
+        ctrl.start_greet()
+        ctrl.open_time_greet()
         
     def save_config(self,evt):
         log.push("系统配置文件正在保存")
