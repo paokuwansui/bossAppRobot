@@ -1,5 +1,11 @@
 # boss打招呼小工具的使用教程
 自动完成boss直聘上面的翻看简历，按条件筛选打招呼和复聊功能
+#项目安装
+1.首先安装python解释器
+2.访问https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+      下载对应你电脑中Edge版本的驱动，并放到你的用户目录下
+3.在cmd中输入
+      pip install selenium
 ## 首先进入代码所在文件夹
       在文件夹中找到（start_for_windows.bat)并双击打开
       此时弹出三个界面
